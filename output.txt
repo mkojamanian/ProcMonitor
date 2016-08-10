@@ -1,0 +1,4 @@
+  PID TTY           TIME CMD
+77616 ttys001    0:01.79 -bash
+88389 ttys001    0:01.17 vim HelloWorld.html
+95471 ttys002    0:00.14 -bash
