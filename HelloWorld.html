@@ -8,32 +8,37 @@
 		margin: 0;
 		background-repeat: no-repeat;
 <!--	border: .25em solid red; -->
-		color: #ffffff;
+		color: green;
+		background-color: black;
 	}
 
 	.theFeed {
-		height: 10em;
-		width: 11em;
+		height: 1000px;
+		width: 1000px;
 <!--		background-color: orange; -->
 		margin: 1.25em;
-		color: white;
+		color: #00cc00;
 	}	
 
 	</style>
 
 </head>
 
-	<body background="transparent\ image.png";> 
-	<!--<body background="Default.png">-->
+	<!--<body background="transparent\ grass.png";> -->
+	<body background="black" opacity="0.5">
 
-	<div class="theFeed">
+	<div class="theFeed" opacity="0.5">
 		<script type='text/javascript'>
-			document.write("Hello Mark<br>How are you today?");
-			var output = widget.system("/bin/echo /User/koj/radio.sh",null).outputString;
-			output.write
+			document.write("Hello Mark<br>How are you today?<br>");
+//			widget.system("/bin/ps > /Users/koj/Library/Widgets/ProcMonitor.wdgt/output.txt")
+			var output = widget.system("/usr/bin/head /Users/koj/Library/Widgets/ProcMonitor.wdgt/output.txt",null).outputString;
+			document.write(output)
+//			var output = widget.system("/bin/ps -M",null).outputString;
+//			document.write(output)
 		</script>
 	</div>
 
 </body>
 
 </html>
+
