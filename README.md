@@ -12,3 +12,5 @@ cascading feed of processes.
 
 GetElementById(
 .innerHTML
+
+Pipe into less, top, ect.
