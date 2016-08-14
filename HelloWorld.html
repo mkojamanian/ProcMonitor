@@ -9,7 +9,7 @@
 		background-repeat: no-repeat;
 <!--	border: .25em solid red; -->
 		color: green;
-		background-color: black;
+		background-color: black;	
 	}
 
 	.theFeed {
@@ -30,10 +30,7 @@
 	<div class="theFeed" opacity="0.5">
 		<script type='text/javascript'>
 			document.write("Hello Mark<br>How are you today?<br>");
-//			widget.system("/bin/ps > /Users/koj/Library/Widgets/ProcMonitor.wdgt/output.txt",null).outputString
-//			var output = widget.system("/usr/bin/head /Users/koj/Library/Widgets/ProcMonitor.wdgt/output.txt",null).outputString;
-//			document.write(output);
-			document.write(widget.system("/bin/ps",null).outputString);
+			document.write(widget.system("/bin/ps | /usr/bin/head",null).outputString);
 
 //			var output = widget.system("/bin/ps -M",null).outputString;
 //			document.write(output)
@@ -43,4 +40,3 @@
 </body>
 
 </html>
-
