@@ -14,3 +14,7 @@ GetElementById(
 .innerHTML
 
 Pipe into less, top, ect.
+
+Pull each line, grep?
+Print to screen.
+Cascade down. (Print, replace?)
