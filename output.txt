@@ -1,4 +1,34 @@
+  
   PID TTY           TIME CMD
-77616 ttys001    0:01.79 -bash
-88389 ttys001    0:01.17 vim HelloWorld.html
-95471 ttys002    0:00.14 -bash
+  241 ttys000    0:00.03 -bash
+  428 ttys000    0:01.02 vim HelloWorld.html
+  242 ttys001    0:00.47 -bash
+  PID TTY           TIME CMD
+  241 ttys000    0:00.03 -bash
+  428 ttys000    0:01.14 vim HelloWorld.html
+  242 ttys001    0:00.47 -bash
+  PID TTY           TIME CMD
+  241 ttys000    0:00.03 -bash
+  428 ttys000    0:01.89 vim HelloWorld.html
+  242 ttys001    0:00.74 -bash
+  PID TTY           TIME CMD
+  241 ttys000    0:00.03 -bash
+  428 ttys000    0:02.04 vim HelloWorld.html
+  242 ttys001    0:00.74 -bash
+  PID TTY           TIME CMD
+  241 ttys000    0:00.03 -bash
+  428 ttys000    0:02.18 vim HelloWorld.html
+  242 ttys001    0:00.78 -bash
+16320 ttys001    0:00.00 less /Users/koj/Library/Widgets/ProcMonitor.wdgt/output.txt
+  PID TTY           TIME CMD
+  241 ttys000    0:00.03 -bash
+  428 ttys000    0:02.21 vim HelloWorld.html
+  242 ttys001    0:00.79 -bash
+  PID TTY           TIME CMD
+  241 ttys000    0:00.03 -bash
+  428 ttys000    0:02.23 vim HelloWorld.html
+  242 ttys001    0:00.80 -bash
+  PID TTY           TIME CMD
+  241 ttys000    0:00.03 -bash
+  428 ttys000    0:02.27 vim HelloWorld.html
+  242 ttys001    0:00.80 -bash

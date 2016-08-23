@@ -9,12 +9,12 @@
 		background-repeat: no-repeat;
 <!--	border: .25em solid red; -->
 		color: green;
-		background-color: black;	
+		background-color: black;
 	}
 
 	.theFeed {
 		height: 1000px;
-		width: 1000px;
+		width: 18em;
 <!--		background-color: orange; -->
 		margin: 1.25em;
 		color: #00cc00;
@@ -24,16 +24,28 @@
 
 </head>
 
-	<!--<body background="transparent\ grass.png";> -->
-	<body background="black" opacity="0.5">
+<body background="black" opacity="0.2">
 
-	<div class="theFeed" opacity="0.5">
+	<div class="theFeed" opacity="0.2">
 		<script type='text/javascript'>
 			document.write("Hello Mark<br>How are you today?<br>");
-			document.write(widget.system("/bin/ps | /usr/bin/head",null).outputString);
 
-//			var output = widget.system("/bin/ps -M",null).outputString;
-//			document.write(output)
+//	Assign command output to variable, then print variable.
+			var output = widget.system("/bin/ps",null).outputString;
+			document.write(output.split(","));
+
+
+/*	Print output to screen.
+			document.write(widget.system("/bin/ps", null).outputString); */	
+
+//	Write command output to file, then print file.
+/*			widget.system("/bin/ps >>
+		~/Library/Widgets/ProcMonitor.wdgt/output.txt",null).outputString; */
+
+/*			document.writeln(widget.system("/usr/bin/less
+		~/Library/Widgets/ProcMonitor.wdgt/output.txt",null).outputString);*/
+
+
 		</script>
 	</div>
 

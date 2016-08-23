@@ -4,8 +4,10 @@ Process Monitor Widget
 
 cascading feed of processes.
 
+
 -Write to file.
--print top screen.
+-assign line (as string) to array.
+	.cat, less, head, 
 -green text on translucent black background.
 -cascading?
 
