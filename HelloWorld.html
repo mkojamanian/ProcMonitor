@@ -28,23 +28,40 @@
 
 	<div class="theFeed" opacity="0.2">
 		<script type='text/javascript'>
-			document.write("Hello Mark<br>How are you today?<br>");
-
-//	Assign command output to variable, then print variable.
-			var output = widget.system("/bin/ps",null).outputString;
-			document.write(output.split(","));
+			document.write("Hello Mark<br>How are you today?<er>");
 
 
-/*	Print output to screen.
-			document.write(widget.system("/bin/ps", null).outputString); */	
+// Assign first line to var
+			var line1 = document.write(widget.system
+			("ps | head -n 1", null).outputString);
 
-//	Write command output to file, then print file.
-/*			widget.system("/bin/ps >>
-		~/Library/Widgets/ProcMonitor.wdgt/output.txt",null).outputString; */
 
+// Output Array
+			arrayFeed = [line1];
+
+
+/*  function to fill array w/ var
+	var = (pid)
+	print 1 pid per line, scroll 6 lines. */
+
+
+		function arrayFunct() {
+//			arrayFeed.shift()
+			arrayFeed.unshift(widget.system(
+				"ps -ax | grep -n \ | grep -A 0 14:\ ",null).outputString)
+			};
+
+
+// Add line .shift(lines after 1), .pop(-1);
+			listlines = [line1];
+			feed.shift();
+
+// THE FEED
+			documents.write(arrayFeed);
+
+// **Idea** Print to doc
 /*			document.writeln(widget.system("/usr/bin/less
-		~/Library/Widgets/ProcMonitor.wdgt/output.txt",null).outputString);*/
-
+			~/Library/Widgets/ProcMonitor.wdgt/output.txt",null).outputString);*/
 
 		</script>
 	</div>
