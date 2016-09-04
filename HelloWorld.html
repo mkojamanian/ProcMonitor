@@ -7,14 +7,13 @@
 	body {
 		margin: 0;
 		background-repeat: no-repeat;
-<!--	border: .25em solid red; -->
 		color: green;
 		background-color: black;
 	}
 
 	.theFeed {
 		height: 1000px;
-		width: 18em;
+		width: 20em;
 <!--		background-color: orange; -->
 		margin: 1.25em;
 		color: #00cc00;
@@ -25,39 +24,34 @@
 </head>
 
 <body background="black" opacity="0.2">
-
-	<div class="theFeed" opacity="0.2">
+<div class="theFeed" opacity="0.2">
 		<script type='text/javascript'>
-			document.write("Hello Mark<br>How are you today?<er>");
+			document.write("Hello Mark<br>How are you today?<br>");
+
 
 
 // Assign first line to var
-			var line1 = document.write(widget.system
-			("ps | head -n 1", null).outputString);
+			var line1 = widget.system(
+			"ps | sed -n 1p", null).outputString; 
 
 
 // Output Array
 			arrayFeed = [line1];
 
 
-/*  function to fill array w/ var
-	var = (pid)
-	print 1 pid per line, scroll 6 lines. */
+//	Print "line2" output, change line with variable..
+			var x = 2;
+			var line2 = widget.system(
+			"ps -ax | sed -n " + x + "p", null).outputString;
 
 
-		function arrayFunct() {
-//			arrayFeed.shift()
-			arrayFeed.unshift(widget.system(
-				"ps -ax | grep -n \ | grep -A 0 14:\ ",null).outputString)
-			};
 
+			arrayFeed.unshift(line2);
 
-// Add line .shift(lines after 1), .pop(-1);
-			listlines = [line1];
-			feed.shift();
 
 // THE FEED
-			documents.write(arrayFeed);
+			document.write(arrayFeed);
+
 
 // **Idea** Print to doc
 /*			document.writeln(widget.system("/usr/bin/less
