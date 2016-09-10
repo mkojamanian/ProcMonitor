@@ -13,7 +13,7 @@
 
 	.theFeed {
 		height: 1000px;
-		width: 20em;
+		width: 22em;
 <!--		background-color: orange; -->
 		margin: 1.25em;
 		color: #00cc00;
@@ -26,36 +26,56 @@
 <body background="black" opacity="0.2">
 <div class="theFeed" opacity="0.2">
 		<script type='text/javascript'>
-			document.write("Hello Mark<br>How are you today?<br>");
+			document.write("_<br>");
+
+// Print header.
+/*			document.write(widget.system(
+			"ps | sed -n 1p", null).outputString + "<br>");
+*/
+
+//	Fill 10 spaces, then push and pop values
 
 
+			var arrayFeed = []; 
 
-// Assign first line to var
-			var line1 = widget.system(
-			"ps | sed -n 1p", null).outputString; 
+			var x = 1;
 
-
-// Output Array
-			arrayFeed = [line1];
-
-
-//	Print "line2" output, change line with variable..
-			var x = 2;
-			var line2 = widget.system(
-			"ps -ax | sed -n " + x + "p", null).outputString;
-
-
-
-			arrayFeed.unshift(line2);
-
-
-// THE FEED
+			function popfeed() {
+			while (x < 11) {
+				arrayFeed.unshift(widget.system(
+				"ps -ax | sed -n " + x + "p", null).outputString
+				 + "<br>");
+				x++;
+			};
+			}
+			popfeed(); 
 			document.write(arrayFeed);
 
 
-// **Idea** Print to doc
-/*			document.writeln(widget.system("/usr/bin/less
-			~/Library/Widgets/ProcMonitor.wdgt/output.txt",null).outputString);*/
+
+/*			var x = 1;
+			var line1 = widget.system(
+				"ps -ax | sed -n " + x + "p", null).outputString;
+			arrayFeed.unshift(line1);
+
+
+			var x = 2;
+			var line2 = widget.system(
+				"ps -ax | sed -n " + x + "p", null).outputString;
+			arrayFeed.unshift(line2);
+
+			var x = 3;
+			var line3 = widget.system(
+				"ps -ax | sed -n " + x + "p", null).outputString;
+			arrayFeed.unshift(line3);
+
+
+			document.write(arrayFeed.join("<br>"));
+*/
+
+
+
+
 
 		</script>
 	</div>
