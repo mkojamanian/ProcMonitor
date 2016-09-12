@@ -10,7 +10,7 @@ cascading feed of processes.
 - Cascading?
 
 
-ps -ax | grep -n \ | grep -A 0 14:\ 
+ps -ax | sed -n "x"p 
 
 
 Assign to array? var?
