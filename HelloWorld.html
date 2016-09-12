@@ -33,26 +33,33 @@
 			"ps | sed -n 1p", null).outputString + "<br>");
 */
 
-//	Fill 10 spaces, then push and pop values
-
 
 			var arrayFeed = []; 
-
 			var x = 1;
 
-			function popfeed() {
-			while (x < 11) {
-				arrayFeed.unshift(widget.system(
-				"ps -ax | sed -n " + x + "p", null).outputString
-				 + "<br>");
-				x++;
-			};
+// Shell script function:
+			function sedScript() {
+				widget.system(
+					"ps -ax | sed -n " + x + "p", null).outputString
+					+ "<br>");
 			}
 
-
-			popfeed(); 
+			function popfeed() {
+				while (x < 11) {
+					arrayFeed.unshift(sedScript());
+					x++;
+				};
+//				else (x >= 10) {
+//					setInterval(popFeed2(), 1000);
+//								}
+			};
+			popfeed();
+//			setInterval(popfeed(), 1000); 
 			document.write(arrayFeed);
 
+// Fill array, print array, modify array, wait 1 second, print.
+			
+			
 
 
 /*			var x = 1;
@@ -74,7 +81,6 @@
 
 			document.write(arrayFeed.join("<br>"));
 */
-
 
 
 
