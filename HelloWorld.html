@@ -28,7 +28,7 @@
 		<script type='text/javascript'>
 			document.write("_<br>");
 
-// Print header.
+			// Print header.
 /*			document.write(widget.system(
 			"ps | sed -n 1p", null).outputString + "<br>");
 */
@@ -37,12 +37,13 @@
 			var arrayFeed = []; 
 			var x = 1;
 
-// Shell script function:
+			// Shell script function:
 			function sedScript() {
-				widget.system(
-					"ps -ax | sed -n " + x + "p", null).outputString
-					+ "<br>");
-			}
+				document.write(widget.system(
+				"/bin/ps -ax | sed -n " + x + "p", null)
+				.outputString + "<br>")
+			};
+
 
 			function popfeed() {
 				while (x < 11) {
@@ -53,34 +54,25 @@
 //					setInterval(popFeed2(), 1000);
 //								}
 			};
+
 			popfeed();
-//			setInterval(popfeed(), 1000); 
 			document.write(arrayFeed);
 
+
+
+
 // Fill array, print array, modify array, wait 1 second, print.
-			
-			
+//			document.write(popfeed() + "<br>");
+//			setInterval(popfeed(), 1000); 
+//			document.write(arrayFeed + "<br>");
 
-
-/*			var x = 1;
-			var line1 = widget.system(
-				"ps -ax | sed -n " + x + "p", null).outputString;
-			arrayFeed.unshift(line1);
-
-
-			var x = 2;
-			var line2 = widget.system(
-				"ps -ax | sed -n " + x + "p", null).outputString;
-			arrayFeed.unshift(line2);
-
-			var x = 3;
-			var line3 = widget.system(
-				"ps -ax | sed -n " + x + "p", null).outputString;
-			arrayFeed.unshift(line3);
-
-
-			document.write(arrayFeed.join("<br>"));
+/*			document.write(widget.system(
+					"ps -ax | sed -n " + x + "p", null).outputString
+					+ "<br>");
 */
+	
+//			document.write(arrayFeed.join("<br>"));
+
 
 
 
