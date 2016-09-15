@@ -12,8 +12,8 @@
 	}
 
 	.theFeed {
-		height: 1000px;
-		width: 22em;
+		height: 100em;
+		width: 32em;
 <!--		background-color: orange; -->
 		margin: 1.25em;
 		color: #00cc00;
@@ -23,16 +23,18 @@
 
 </head>
 
-<body background="black" opacity="0.2">
-<div class="theFeed" opacity="0.2">
-		<script type='text/javascript'>
-			document.write("_<br>");
+
+<body>
+
+	<p>ProcMonitor</p>
+	<p id="demo"></p>
+
+	<script type='text/javascript'> document.write("_<br>");
 
 			// Print header.
-/*			document.write(widget.system(
+	/*		document.write(widget.system(
 			"ps | sed -n 1p", null).outputString + "<br>");
-*/
-
+	*/
 
 			var arrayFeed = []; 
 			var x = 1;
@@ -44,32 +46,48 @@
 				.outputString + "<br>")
 			};
 
-
 			function popfeed() {
-				while (x < 11) {
-					arrayFeed.unshift(sedScript());
-					x++;
-				};
-//				else (x >= 10) {
-//					setInterval(popFeed2(), 1000);
-//								}
+				arrayFeed.unshift(sedScript());
+				x++;
 			};
 
-			popfeed();
-			document.write(arrayFeed);
+			function cascade() {
+				do {
+					window.setInterval(popfeed(), 1000);
+					}
+				while (x > 11);
+			};
+			document.write(cascade());
 
 
 
 
-// Fill array, print array, modify array, wait 1 second, print.
-//			document.write(popfeed() + "<br>");
-//			setInterval(popfeed(), 1000); 
-//			document.write(arrayFeed + "<br>");
+			var myVar = setInterval(myTimer, 1000);
 
-/*			document.write(widget.system(
-					"ps -ax | sed -n " + x + "p", null).outputString
-					+ "<br>");
-*/
+			function myTimer() {
+			//	var d = new Date();
+
+			document.getElementById("demo").innerHTML =
+				popfeed.toLocaleTimeString();
+			}
+
+		// print line 1, wait 1 sec
+		// do 10 times
+		// begin pop/push/wait
+
+
+
+		//	document.write(popfeed());
+		//		else (x >= 10) {
+		//		setInterval(popFeed2(), 1000);
+		//		}
+		//	};
+
+		//	popfeed();
+		//	document.write(arrayFeed.join(" "));
+
+
+
 	
 //			document.write(arrayFeed.join("<br>"));
 
