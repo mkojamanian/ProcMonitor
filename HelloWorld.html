@@ -25,79 +25,30 @@
 
 <body>
 
-	<p>ProcMonitor</p>
+	<p id="PM">ProcMonitor</p>
 	<p id="demo"></p>
 <script type='text/javascript'> document.write("_<br>");
 
-			// Print header.
-	/*		document.write(widget.system(
-			"ps | sed -n 1p", null).outputString + "<br>");
-	*/
 
-			var arrayFeed = []; 
+			var arrayFeed = [];
 			var x = 1;
-
 			var sed = "ps -ax | sed -n " + x + "p";
 			var sedScript = widget.system(sed, null);
 
-			document.getElementById("demo").innerHTML =
-				sedScript.outputString;
 
+			var cascade = setInterval(popfeed, 1000);
 
-			document.write("fin");
-
-/*			function popfeed() {
-				document.getElementById("demo").innerHTML =
-				arrayFeed;
-				arrayFeed.unshift(sedScript());
-				x++;
-			};
-*/
-//			popfeed();
-//			var y =
-
-/*
-			var y = widget.system("ps", null).outputString;
-			document.getElementById("demo").innerHTML = y;
-*/
-//			var cascade = setInterval(popfeed, 1000);
-
-
-/*			var myVar = setInterval(printX, 1000);
-
-			var y = 1;
-
-			function printX() {
-				document.getElementById("demo").innerHTML =
-				y;
-				y++;
+			function popfeed() {
+				document.getElementById("PM").innerHTML =
+				arrayFeed.join("<br>");
+				arrayFeed.unshift(widget.system(
+					"ps -ax | sed -n " + x + "p", null)
+					.outputString );
+				x = ++x;
+				if (x > 11) {
+					arrayFeed.pop();
+				};
 			}
-*/
-/*
-			var myVar = setInterval(myTimer, 1000);
-
-			function myTimer() {
-			//	var d = new Date();
-
-			document.getElementById("demo").innerHTML =
-				popfeed.toLocaleTimeString();
-			}
-*/
-
-		// print line 1, wait 1 sec
-		// do 10 times
-		// begin pop/push/wait
-
-
-
-		//	document.write(popfeed());
-		//		else (x >= 10) {
-		//		setInterval(popFeed2(), 1000);
-		//		}
-		//	};
-
-		//	popfeed();
-		//	document.write(arrayFeed.join(" "));
 
 
 
