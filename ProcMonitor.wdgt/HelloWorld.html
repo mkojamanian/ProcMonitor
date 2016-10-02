@@ -1,0 +1,65 @@
+<html>
+<head>
+
+
+	<style>
+
+	body {
+		margin: 0;
+		background-repeat: no-repeat;
+		color: green;
+		background-color: black;
+	}
+
+	.theFeed {
+		height: 100em;
+		width: 32em;
+		margin: 1.25em;
+		color: #00cc00;
+	}	
+
+	</style>
+
+</head>
+
+
+<body>
+
+	<p id="PM">ProcMonitor</p>
+	<p id="demo"></p>
+<script type='text/javascript'> document.write("_<br>");
+
+
+		var arrayFeed = [];
+		var x = 1;
+//		var sed = "ps -ax | sed -n " + x + "p";
+//		var sedScript = widget.system(sed, null);
+
+
+		var cascade = setInterval(popfeed, 500);
+
+		function popfeed() {
+		document.getElementById("PM").innerHTML =
+			arrayFeed[x];
+			document.getElementById("demo").innerHTML =
+			arrayFeed.join("<br>");
+			arrayFeed.unshift(widget.system(
+				"ps -ax | sed -n " + x + "p", null)
+				.outputString );
+			x = ++x;
+			if (x > 11) {
+				arrayFeed.pop();
+			};
+			if (arrayFeed == undefined) {
+				x = 3;
+			};
+			}
+	
+
+
+
+</script>
+
+</body>
+
+</html>
